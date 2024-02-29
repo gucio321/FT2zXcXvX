@@ -11,7 +11,8 @@ DISCLAIMER: This is NOT an official template!
 -->
 
 ```{toctree}
-:maxdepth: 3
+:hidden:
+:maxdepth: 1
 
 assets/document.md
 ```

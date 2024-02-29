@@ -21,12 +21,13 @@ project = 'Title'
 copyright = '2023, Author'
 author = 'Author'
 titlepage = {
-        "title": "Praca",
+        "title": "Laboratorium FIzyczne - Sprawozdanie",
         "subtitle":"Tytuł pracy",
         "subtitle2":"Document Title",
         "author": author,
-        "profile": "Fizyka Techniczna",
-        "protector": "Opiekun",
+        "team": "7",
+        "number": "0",
+        "version": "1",
         "townAndYear": "Kraków 2024",
 }
 
@@ -118,7 +119,9 @@ latex_elements = {
         'papersize': 'letterpaper',
         'pointsize': '10pt',
         'preamble': r'''
+        \let\endtitlepage\relax
         \usepackage{cancel}
+        \usepackage{tabularx}
         \usepackage[utf8]{inputenc}
         %%\usepackage[margin=3.5cm]{geometry}
         \usepackage{graphicx}
@@ -126,9 +129,12 @@ latex_elements = {
         \newcommand{\sphinxDocumentSubtitle}{'''+titlepage['subtitle']+r'''}
         \newcommand{\sphinxDocumentSubtitleBis}{'''+titlepage['subtitle2']+r'''}
         \newcommand{\sphinxDocumentAuthor}{'''+titlepage['author']+r'''}
-        ''' + defineLatexVar("\sphinxDocumentProfile", titlepage['profile']) + r'''
-        ''' + defineLatexVar("\sphinxDocumentProtector", titlepage['protector']) + r'''
+        ''' + defineLatexVar("\sphinxDocumentTeam", titlepage['team']) + r'''
+        ''' + defineLatexVar("\sphinxDocumentNumber", titlepage['number']) + r'''
+        ''' + defineLatexVar("\sphinxDocumentVersion", titlepage['version']) + r'''
         ''' + defineLatexVar("\sphinxDocumentTownAndYear", titlepage['townAndYear']) + r'''
         ''',
-        'maketitle': '\\input{titlepage.cls}'
+        'maketitle': '\\input{titlepage.cls}',
+        'tableofcontents':'',
+        'extraclassoptions': 'openany,oneside'
 }
