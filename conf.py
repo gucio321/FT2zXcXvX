@@ -119,10 +119,13 @@ latex_elements = {
         'papersize': 'letterpaper',
         'pointsize': '10pt',
         'preamble': r'''
+        \ChRuleWidth{0pt}
+        \ChNumVar{}
         \let\endtitlepage\relax
         \usepackage{cancel}
         \usepackage{tabularx}
         \usepackage[utf8]{inputenc}
+        \usepackage{etoolbox}
         %%\usepackage[margin=3.5cm]{geometry}
         \usepackage{graphicx}
         \newcommand{\sphinxDocumentTitle}{'''+titlepage['title']+r'''}
@@ -133,8 +136,19 @@ latex_elements = {
         ''' + defineLatexVar("\sphinxDocumentNumber", titlepage['number']) + r'''
         ''' + defineLatexVar("\sphinxDocumentVersion", titlepage['version']) + r'''
         ''' + defineLatexVar("\sphinxDocumentTownAndYear", titlepage['townAndYear']) + r'''
+
+
+\titlespacing*{\chapter}{0pt}{0pt}{0pt} % Adjust the values as needed
         ''',
-        'maketitle': '\\input{titlepage.cls}',
+        'maketitle': r'''\input{titlepage.cls}
+
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries}{\thechapter}{20pt}{\huge}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+        ''',
         'tableofcontents':'',
         'extraclassoptions': 'openany,oneside'
 }
