@@ -7,7 +7,6 @@ on:
 
 jobs:
   build-pdf:
-    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: check out code
