@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Title'
+project = 'FT2zXcXvX'
 copyright = '2023, Author'
 author = 'Author'
 titlepage = {
@@ -138,12 +138,15 @@ latex_elements = {
         ''' + defineLatexVar("\sphinxDocumentTownAndYear", titlepage['townAndYear']) + r'''
 
 
-\titlespacing*{\chapter}{0pt}{0pt}{0pt} % Adjust the values as needed
+\titlespacing*{\chapter}{-10pt}{10pt}{0pt} % Adjust the values as needed
+\titlespacing*{\section}{0pt}{5pt}{0pt} % Adjust the values as needed
         ''',
         'maketitle': r'''\input{titlepage.cls}
 
 \titleformat{\chapter}[hang]
-  {\normalfont\huge\bfseries}{\thechapter}{20pt}{\huge}
+  {\normalfont\large\bfseries}{\llap{\thechapter\hskip 8pt}}{0pt}{\large}
+\titleformat{\section}
+  {\normalfont\large\bfseries}{\thesection\space}{0pt}{\large}
 \makeatletter
 \patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
 \makeatother
