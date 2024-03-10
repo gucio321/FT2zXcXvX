@@ -1,10 +1,6 @@
-# DISCLAIMER - THIS IS NOT AN OFFICIAL AGH TEMPLATE
+# Description
 
-I use it for my personal projects but feel free to try it out.
-
-# AGH Sphinx Template
-
-Sphinx project template for Akademia Górniczo-Hutnicza im. Stanisława Staszica documents.
+Template for Physics Labs reports on AGH. -- Szablon sprawozdań z Laboratorium Fizycznego AGH.
 
 ## Usage
 
@@ -14,15 +10,26 @@ Sphinx project template for Akademia Górniczo-Hutnicza im. Stanisława Staszica
 4. Edit `index.md` and/or other files
 5. Use makefile to generate project (`make html` / `make latxpdf`)
 
-<details><summary>Pre requirements on Fedora</summary>
+<details><summary>Pre requirements</summary>
 
-On fedora you need to install this:
+- On fedora you need to install this:
 
 ```sh
 dnf install -y latexmk texlive-cmap texlive-collection-fontsrecommended texlive-fncychap texlive-wrapfig texlive-capt-of texlive-framed texlive-upquote texlive-needspace texlive-tabulary texlive-parskip texlive-oberdiek texlive-cancel texlive-hyphen-polish texlive-pict2e texlive-ellipse.noarch
 ```
 
-I'm not sure about other OS - Let me know if you find it out!
+- on `apt`-based linux:
+
+```sh
+sudo apt install -y latexmk texlive texlive-fonts-extra texlive-full texlive-lang-polish
+```
+
+- on other distros: Generally you need to find the following:
+    * `pdflatex` command
+    * something like `texlive-full`
+    * polish babel version (e.g. search for `texlive*polish*`)
+
+- On windows: STOP USEING WINDOWS. Ok, seriously speaking: check out the previous point - you need same setup.
 
 </details>
 
@@ -34,11 +41,3 @@ Available technologies:
 ## Resources
 
 - [AGH - WFIiS Title Pag template](https://www.overleaf.com/latex/templates/praca-dyplomowa/kbwcrcmczypy)
-
-<details><summary>Investigation about latex customization</summary>
-
-- `latex_logo` could set logo
-- `latex_additional_files` works similar to `html_static_path`
-- thsi is about figures naming: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-numfig_format
-
-</details>
