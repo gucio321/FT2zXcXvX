@@ -1,3 +1,6 @@
 venv
 _build
 *.swp
+__pycache__
+__init__
+priv.py # this file will not be added to git
