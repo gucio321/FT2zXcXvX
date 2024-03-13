@@ -15,20 +15,26 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
-from priv import *
+import time
 
-project = 'FT2zXcXvX'
-copyright = '2023, Author'
+project = 'FT2zXcXv1'
+copyright = '2023, ' + author
+author = 'autor'
 titlepage = {
-        "title": "Laboratorium Fizyczne - Sprawozdanie",
-        "subtitle":"Tytuł pracy",
-        "subtitle2":"Document Title",
+        "faculty": "Fizyki i Informatyki Stosowanej",
         "author": author,
+        "year": "2024",
+        "groupID": "2",
         "team": "7",
+        "title": "TEMAT SPRAWOZDANIA",
         "number": "0",
-        "version": "1",
-        "townAndYear": "Kraków 2024",
+        "creationDate": "auto",
 }
+
+if titlepage["creationDate"] == "auto":
+    t = time.localtime()
+    titlepage["creationDate"] = str(t.tm_year)+"-"+str(t.tm_mon)+"-"+str(t.tm_mday)
+
 
 # for cloud_sptheme.ext.issue_tracker
 issue_tracker_url="gh:gucio321/fizyka"
@@ -118,6 +124,7 @@ latex_elements = {
         'papersize': 'letterpaper',
         'pointsize': '10pt',
         'preamble': r'''
+        \newcolumntype{L}{>{\raggedright\arraybackslash}X}
         \ChRuleWidth{0pt}
         \ChNumVar{}
         \let\endtitlepage\relax
@@ -127,14 +134,15 @@ latex_elements = {
         \usepackage{etoolbox}
         %%\usepackage[margin=3.5cm]{geometry}
         \usepackage{graphicx}
+        \usepackage{makecell}
         \newcommand{\sphinxDocumentTitle}{'''+titlepage['title']+r'''}
-        \newcommand{\sphinxDocumentSubtitle}{'''+titlepage['subtitle']+r'''}
-        \newcommand{\sphinxDocumentSubtitleBis}{'''+titlepage['subtitle2']+r'''}
         \newcommand{\sphinxDocumentAuthor}{'''+titlepage['author']+r'''}
+        \newcommand{\sphinxDocumentGroupID}{'''+titlepage['groupID']+r'''}
+        \newcommand{\sphinxDocumentFaculty}{'''+titlepage['faculty']+r'''}
+        \newcommand{\sphinxDocumentCreationDate}{'''+titlepage['creationDate']+r'''}
         ''' + defineLatexVar("\sphinxDocumentTeam", titlepage['team']) + r'''
         ''' + defineLatexVar("\sphinxDocumentNumber", titlepage['number']) + r'''
-        ''' + defineLatexVar("\sphinxDocumentVersion", titlepage['version']) + r'''
-        ''' + defineLatexVar("\sphinxDocumentTownAndYear", titlepage['townAndYear']) + r'''
+        ''' + defineLatexVar("\sphinxDocumentYear", titlepage['year']) + r'''
 
 
 \titlespacing*{\chapter}{-10pt}{10pt}{0pt} % Adjust the values as needed
