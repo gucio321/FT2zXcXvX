@@ -19,7 +19,7 @@ import time
 
 project = 'FT2zXcXv1'
 author = 'autor'
-copyright = '2023, ' + author
+copyright = '2024, ' + author
 titlepage = {
         "faculty": "Fizyki i Informatyki Stosowanej",
         "author": author,
