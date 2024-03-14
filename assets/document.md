@@ -9,12 +9,6 @@
 
 # Obliczenia
 
-# Set axis titles
-
-# define trendline
-
-# fit our trendline to data
-
 # Szacowanie niepewności
 
 # Podsumowanie
