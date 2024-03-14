@@ -33,7 +33,7 @@ titlepage = {
 
 if titlepage["creationDate"] == "auto":
     t = time.localtime()
-    titlepage["creationDate"] = str(t.tm_year)+"-"+str(t.tm_mon)+"-"+str(t.tm_mday)
+    titlepage["creationDate"] = str(t.tm_year)+"-"+"{:02d}".format(t.tm_mon)+"-"+"{:02d}".format(t.tm_mday)
 
 
 # for cloud_sptheme.ext.issue_tracker
