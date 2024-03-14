@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.abspath('.'))
 import time
 
 project = 'FT2zXcXv1'
-copyright = '2023, ' + author
 author = 'autor'
+copyright = '2023, ' + author
 titlepage = {
         "faculty": "Fizyki i Informatyki Stosowanej",
         "author": author,
@@ -29,7 +29,7 @@ titlepage = {
         "title": "TEMAT SPRAWOZDANIA",
         "number": "0",
         "creationDate": "auto",
-}
+        }
 
 if titlepage["creationDate"] == "auto":
     t = time.localtime()
@@ -50,7 +50,7 @@ extensions = [
         "sphinxcontrib.plot",
         #"cloud_sptheme.ext.issue_tracker",
         "myst_parser" # ref: https://www.sphinx-doc.org/en/master/usage/markdown.html
-]
+        ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -78,10 +78,10 @@ html_theme_options = {
         "sidebar_localtoc_title": "Spis treści:",
         "sidebar_prev_title": "Poprzednia strona",
         "sidebar_next_title": "Następna strona",
-}
+        }
 html_css_files= [
         'css/custom.css'
-]
+        ]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -96,21 +96,21 @@ html_copy_source=False
 
 # for myst_parser (markdown)
 myst_enable_extensions = [
-    "amsmath",
-    "attrs_inline",
-    "colon_fence",
-    "deflist",
-    "dollarmath",
-    "fieldlist",
-    "html_admonition",
-    "html_image",
-    #"linkify",
-    "replacements",
-    "smartquotes",
-    "strikethrough",
-    "substitution",
-    "tasklist",
-]
+        "amsmath",
+        "attrs_inline",
+        "colon_fence",
+        "deflist",
+        "dollarmath",
+        "fieldlist",
+        "html_admonition",
+        "html_image",
+        #"linkify",
+        "replacements",
+        "smartquotes",
+        "strikethrough",
+        "substitution",
+        "tasklist",
+        ]
 
 # just helper :-P
 def defineLatexVar(varName : str, var : str) -> str:
@@ -161,4 +161,4 @@ latex_elements = {
         ''',
         'tableofcontents':'',
         'extraclassoptions': 'openany,oneside'
-}
+        }
