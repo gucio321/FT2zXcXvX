@@ -31,6 +31,7 @@ titlepage = {
         "creationDate": "[DATA POWSTANIA SPRAWOZDANIA]",
         "taskDate":"[DATA LABORATORIUM]",
         "correctionDate": "[DATA POPRAWKI]",
+}
 
 if titlepage["creationDate"] == "auto":
     t = time.localtime()
@@ -143,7 +144,6 @@ latex_elements = {
         \newcommand{\sphinxDocumentTaskDate}{'''+titlepage['taskDate']+r'''}
         \newcommand{\sphinxDocumentCreationDate}{'''+titlepage['creationDate']+r'''}
         \newcommand{\sphinxDocumentCorrectionDate}{'''+titlepage['correctionDate']+r'''}
-        \newcommand{\sphinxDocumentCreationDate}{'''+titlepage['creationDate']+r'''}
         ''' + defineLatexVar("\sphinxDocumentTeam", titlepage['team']) + r'''
         ''' + defineLatexVar("\sphinxDocumentNumber", titlepage['number']) + r'''
         ''' + defineLatexVar("\sphinxDocumentYear", titlepage['year']) + r'''
