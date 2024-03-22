@@ -10,26 +10,34 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
+import time
 
-project = 'FT2zXcXvX'
-copyright = '2023, Author'
-author = 'Author'
+project = 'Sprawozdanie, Laboratorium - Fizyka II'
+author = 'Autorzy:\n Bartłomiej Waliłko,\n Piotr Walczak'
+copyright = '2024, ' + author
 titlepage = {
-        "title": "Laboratorium FIzyczne - Sprawozdanie",
-        "subtitle":"Tytuł pracy",
-        "subtitle2":"Document Title",
+        "faculty": "Wydział:\nInżynierii Metali i Informatyki Przemysłowej",
         "author": author,
-        "team": "7",
+        "year": "2024",
+        "groupID": "8",
+        "team": "8",
+        "title": "Temat:\nĆwiczenie zerowe",
         "number": "0",
-        "version": "1",
-        "townAndYear": "Kraków 2024",
-}
+        "creationDate": "2024-03-07",
+        "taskDate":"2024-03-01",
+        "correctionDate": "2024-03-21",
+
+        }
+
+if titlepage["creationDate"] == "auto":
+    t = time.localtime()
+    titlepage["creationDate"] = str(t.tm_year)+"-"+"{:02d}".format(t.tm_mon)+"-"+"{:02d}".format(t.tm_mday)
+
 
 # for cloud_sptheme.ext.issue_tracker
 issue_tracker_url="gh:gucio321/fizyka"
@@ -45,7 +53,7 @@ extensions = [
         "sphinxcontrib.plot",
         #"cloud_sptheme.ext.issue_tracker",
         "myst_parser" # ref: https://www.sphinx-doc.org/en/master/usage/markdown.html
-]
+        ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -73,10 +81,10 @@ html_theme_options = {
         "sidebar_localtoc_title": "Spis treści:",
         "sidebar_prev_title": "Poprzednia strona",
         "sidebar_next_title": "Następna strona",
-}
+        }
 html_css_files= [
         'css/custom.css'
-]
+        ]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -91,21 +99,21 @@ html_copy_source=False
 
 # for myst_parser (markdown)
 myst_enable_extensions = [
-    "amsmath",
-    "attrs_inline",
-    "colon_fence",
-    "deflist",
-    "dollarmath",
-    "fieldlist",
-    "html_admonition",
-    "html_image",
-    #"linkify",
-    "replacements",
-    "smartquotes",
-    "strikethrough",
-    "substitution",
-    "tasklist",
-]
+        "amsmath",
+        "attrs_inline",
+        "colon_fence",
+        "deflist",
+        "dollarmath",
+        "fieldlist",
+        "html_admonition",
+        "html_image",
+        #"linkify",
+        "replacements",
+        "smartquotes",
+        "strikethrough",
+        "substitution",
+        "tasklist",
+        ]
 
 # just helper :-P
 def defineLatexVar(varName : str, var : str) -> str:
@@ -119,6 +127,7 @@ latex_elements = {
         'papersize': 'letterpaper',
         'pointsize': '10pt',
         'preamble': r'''
+        \newcolumntype{L}{>{\raggedright\arraybackslash}X}
         \ChRuleWidth{0pt}
         \ChNumVar{}
         \let\endtitlepage\relax
@@ -128,14 +137,17 @@ latex_elements = {
         \usepackage{etoolbox}
         %%\usepackage[margin=3.5cm]{geometry}
         \usepackage{graphicx}
+        \usepackage{makecell}
         \newcommand{\sphinxDocumentTitle}{'''+titlepage['title']+r'''}
-        \newcommand{\sphinxDocumentSubtitle}{'''+titlepage['subtitle']+r'''}
-        \newcommand{\sphinxDocumentSubtitleBis}{'''+titlepage['subtitle2']+r'''}
         \newcommand{\sphinxDocumentAuthor}{'''+titlepage['author']+r'''}
+        \newcommand{\sphinxDocumentGroupID}{'''+titlepage['groupID']+r'''}
+        \newcommand{\sphinxDocumentFaculty}{'''+titlepage['faculty']+r'''}
+        \newcommand{\sphinxDocumentTaskDate}{'''+titlepage['taskDate']+r'''}
+        \newcommand{\sphinxDocumentCreationDate}{'''+titlepage['creationDate']+r'''}
+        \newcommand{\sphinxDocumentCorrectionDate}{'''+titlepage['correctionDate']+r'''}
         ''' + defineLatexVar("\sphinxDocumentTeam", titlepage['team']) + r'''
         ''' + defineLatexVar("\sphinxDocumentNumber", titlepage['number']) + r'''
-        ''' + defineLatexVar("\sphinxDocumentVersion", titlepage['version']) + r'''
-        ''' + defineLatexVar("\sphinxDocumentTownAndYear", titlepage['townAndYear']) + r'''
+        ''' + defineLatexVar("\sphinxDocumentYear", titlepage['year']) + r'''
 
 
 \titlespacing*{\chapter}{-10pt}{10pt}{0pt} % Adjust the values as needed
@@ -154,4 +166,4 @@ latex_elements = {
         ''',
         'tableofcontents':'',
         'extraclassoptions': 'openany,oneside'
-}
+        }
