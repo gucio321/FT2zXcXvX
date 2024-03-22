@@ -3,7 +3,6 @@
 \begin{center}
 
 %{\sf{\huge \sphinxDocumentTitle}} \\[5mm]
-<<<<<<< HEAD
 \begin{tabularx}{\textwidth}{ |L|L|L|L|L|L| }
         \hline
 	\sphinxDocumentFaculty &
