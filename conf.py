@@ -18,21 +18,19 @@ sys.path.insert(0, os.path.abspath('.'))
 import time
 
 project = 'Sprawozdanie, Laboratorium - Fizyka II'
-author = 'Autorzy:\n Bartłomiej Waliłko,\n Piotr Walczak'
+author = 'Autorzy:[AUTORZY]'
 copyright = '2024, ' + author
 titlepage = {
-        "faculty": "Wydział:\nInżynierii Metali i Informatyki Przemysłowej",
+        "faculty": "Wydział:[WYDZIAŁ]",
         "author": author,
-        "year": "2024",
-        "groupID": "8",
-        "team": "8",
-        "title": "Temat:\nĆwiczenie zerowe",
-        "number": "0",
-        "creationDate": "2024-03-07",
-        "taskDate":"2024-03-01",
-        "correctionDate": "2024-03-21",
-
-        }
+        "year": "[ROK]",
+        "groupID": "[NR GRUPY]",
+        "team": "[NR DRUŻYNY]",
+        "title": "Temat:[TEMAT ĆWICZENIA]",
+        "number": "[NUMER ĆWICZENIA]",
+        "creationDate": "[DATA POWSTANIA SPRAWOZDANIA]",
+        "taskDate":"[DATA LABORATORIUM]",
+        "correctionDate": "[DATA POPRAWKI]",
 
 if titlepage["creationDate"] == "auto":
     t = time.localtime()
@@ -145,6 +143,7 @@ latex_elements = {
         \newcommand{\sphinxDocumentTaskDate}{'''+titlepage['taskDate']+r'''}
         \newcommand{\sphinxDocumentCreationDate}{'''+titlepage['creationDate']+r'''}
         \newcommand{\sphinxDocumentCorrectionDate}{'''+titlepage['correctionDate']+r'''}
+        \newcommand{\sphinxDocumentCreationDate}{'''+titlepage['creationDate']+r'''}
         ''' + defineLatexVar("\sphinxDocumentTeam", titlepage['team']) + r'''
         ''' + defineLatexVar("\sphinxDocumentNumber", titlepage['number']) + r'''
         ''' + defineLatexVar("\sphinxDocumentYear", titlepage['year']) + r'''
