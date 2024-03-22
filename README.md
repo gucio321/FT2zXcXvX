@@ -8,7 +8,7 @@ Template for Physics Labs reports on AGH. -- Szablon sprawozdań z Laboratorium 
 2. Edit conf.py and/or other files (I'll put list here). The variables you may want to use are on top of `conf.py` (title/author, e.t.c.)
 3. (Only first time) Generate virtual enviroument `python3 -m virtualenv venv` and activate it `source venv/bin/activate`
 4. Edit `index.md` and/or other files
-5. Use makefile to generate project (`make html` / `make latxpdf`)
+5. Use makefile to generate project (`make html` / `make latexpdf`)
 
 <details><summary>Pre requirements</summary>
 
