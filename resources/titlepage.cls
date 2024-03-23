@@ -29,12 +29,6 @@
 	\bf{Ocena} \\[1cm]
       \hline
 
-%        Autor/Autorzy: \bf{\sphinxDocumentAuthor} &
-%        Zespół nr: \bf{\sphinxDocumentTeam} \\
-%        \hline
-%        Ćwiczenie nr: \bf{\sphinxDocumentNumber} &
-%        Wersja: \bf{\sphinxDocumentVersion} \\
-%        \hline
 \end{tabularx}
 \end{center}
 
