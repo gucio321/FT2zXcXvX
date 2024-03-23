@@ -5,19 +5,19 @@
 %{\sf{\huge \sphinxDocumentTitle}} \\[5mm]
 \begin{tabularx}{\textwidth}{ |L|L|L|L|L|L| }
         \hline
-	\sphinxDocumentFaculty &
-	\multicolumn{2}{|c|}{\sphinxDocumentAuthor}
+        \bf{Wydział:} \sphinxDocumentFaculty &
+        \multicolumn{2}{|c|}{\bf{Autor/Autorzy:} \sphinxDocumentAuthor}
 	\vline &
-        Rok \bf{\sphinxDocumentYear} &
-        Grupa \bf{\sphinxDocumentGroupID} &
-        Zespół \bf{\sphinxDocumentTeam} \\
+        \bf{Rok:} \sphinxDocumentYear &
+        \bf{Grupa} \sphinxDocumentGroupID &
+        \bf{Zespół} \sphinxDocumentTeam \\
         \hline
 
 	\multicolumn{2}{|c|}{\bf{PRACOWNIA FIZYCZNA WFiS AGH}}
 	\vline &
 	\multicolumn{2}{c}{\sphinxDocumentTitle}  
 	\vline &
-	\multicolumn{2}{|c|}{Ćwiczenie nr: \sphinxDocumentNumber}
+        \multicolumn{2}{|c|}{\bf{Ćwiczenie nr:} \sphinxDocumentNumber}
 	\vline \\[1cm]
       \hline
 

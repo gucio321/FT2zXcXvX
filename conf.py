@@ -17,25 +17,34 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 import time
 
-project = 'Sprawozdanie, Laboratorium - Fizyka II'
-author = 'Autorzy:[AUTORZY]'
-copyright = '2024, ' + author
+project = 'FT2zXcXvX'
+author = '[AUTORZY]'
 titlepage = {
-        "faculty": "Wydział:[WYDZIAŁ]",
-        "author": author,
-        "year": "[ROK]",
+        "faculty": "Fizyki i Informatyki Stosowanej",
+        "year": "auto",
         "groupID": "[NR GRUPY]",
         "team": "[NR DRUŻYNY]",
-        "title": "Temat:[TEMAT ĆWICZENIA]",
+        "title": "[TEMAT ĆWICZENIA]",
         "number": "[NUMER ĆWICZENIA]",
-        "creationDate": "[DATA POWSTANIA SPRAWOZDANIA]",
-        "taskDate":"[DATA LABORATORIUM]",
-        "correctionDate": "[DATA POPRAWKI]",
+
+        "taskDate": "auto", # [DATA LABORATORIUM]
+        "creationDate": "auto", # [DATA POWSTANIA SPRAWOZDANIA]
+        "correctionDate": "", # [DATA POPRAWKI] - I hope You'll not need that :-)
+
+        # nothing to change here
+        "author": author,
 }
+
+if titlepage["taskDate"] == "auto":
+    t = time.localtime()
+    titlepage["taskDate"] = str(t.tm_year)+"-"+"{:02d}".format(t.tm_mon)+"-"+"{:02d}".format(t.tm_mday)
 
 if titlepage["creationDate"] == "auto":
     t = time.localtime()
     titlepage["creationDate"] = str(t.tm_year)+"-"+"{:02d}".format(t.tm_mon)+"-"+"{:02d}".format(t.tm_mday)
+
+if titlepage["year"] == "auto":
+    titlepage["year"] = str(time.localtime().tm_year)
 
 
 # for cloud_sptheme.ext.issue_tracker
