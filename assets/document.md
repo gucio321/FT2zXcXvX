@@ -6,7 +6,6 @@
 
 # Wyniki pomiarów
 
-
 # Obliczenia
 
 # Szacowanie niepewności

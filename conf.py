@@ -146,6 +146,11 @@ latex_elements = {
         %%\usepackage[margin=3.5cm]{geometry}
         \usepackage{graphicx}
         \usepackage{makecell}
+        \usepackage{caption}
+
+        \DeclareCaptionLabelFormat{custom}{#1~\thechapter.#2}
+        \captionsetup{labelformat=custom}
+
         \newcommand{\sphinxDocumentTitle}{'''+titlepage['title']+r'''}
         \newcommand{\sphinxDocumentAuthor}{'''+titlepage['author']+r'''}
         \newcommand{\sphinxDocumentGroupID}{'''+titlepage['groupID']+r'''}
