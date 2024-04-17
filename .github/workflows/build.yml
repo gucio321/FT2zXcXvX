@@ -25,16 +25,21 @@ jobs:
         sudo apt install -y latexmk texlive texlive-fonts-extra texlive-full
     - name: build PDF
       run: make latexpdf
+    - name: extract file name
+      run: |
+        # extract filename from conf.py (it is a value of variable 'project' in lowercase)
+        echo "filename=$(grep project conf.py | awk '{print tolower($2)}')" >> $GITHUB_ENV
     - name: do some trick ;-)
       shell: bash
       run: |
-        stat '_build/latex/matematyka.pdf'
-        mv '_build/latex/matematyka.pdf' ..
+        echo "The file name is $filename"
+        stat '_build/latex/$filename.pdf'
+        mv '_build/latex/$filename.pdf' ..
         rm -rf *
         git add .
         git config user.name gucio321
         git config user.email gucio321@protonmail.com
-        mv ../matematyka.pdf .
+        mv ../$filename.pdf .
         git add .
         git commit --amend --no-edit
     - name: Push changes
