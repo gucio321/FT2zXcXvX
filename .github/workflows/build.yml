@@ -28,18 +28,18 @@ jobs:
     - name: extract file name
       run: |
         # extract filename from conf.py (it is a value of variable 'project' in lowercase)
-        echo "filename=$(grep project conf.py | awk '{print tolower($2)}')" >> $GITHUB_ENV
+        echo "filename=$(grep project conf.py | gawk '{gsub(/'\''/,"",$3); print tolower($3)}')" >> $GITHUB_ENV
     - name: do some trick ;-)
       shell: bash
       run: |
         echo "The file name is $filename"
-        stat '_build/latex/$filename.pdf'
-        mv '_build/latex/$filename.pdf' ..
+        stat "_build/latex/${filename}.pdf"
+        mv "_build/latex/${filename}.pdf" ..
         rm -rf *
         git add .
         git config user.name gucio321
         git config user.email gucio321@protonmail.com
-        mv ../$filename.pdf .
+        mv ../${filename}.pdf .
         git add .
         git commit --amend --no-edit
     - name: Push changes
