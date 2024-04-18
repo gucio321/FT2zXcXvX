@@ -1,4 +1,4 @@
-name: Pages
+name: Build PDF document
 on: 
   push:
     branch:
