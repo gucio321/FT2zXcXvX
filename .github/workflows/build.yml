@@ -93,7 +93,7 @@ jobs:
     - name: edit README
       run: |
         # replace content of README.md between <!--AUTOURL-BEGIN--> and <!--AUTOURL-END--> with the link to the PDF file
-        sed -i -e "/\(<\!--AUTOURL-BEGIN-->\)/, /\(<\!--AUTOURL-END-->\)/c\<\!--AUTOURL-BEGIN-->\n<a href=\"https://github.com/${{ github.repository }}/blob/pdf/{{ github.sha }}/$filename.pdf\">\n<\!--AUTOURL-END-->" README.md
+        sed -i -e "/\(<\!--AUTOURL-BEGIN-->\)/, /\(<\!--AUTOURL-END-->\)/c\<\!--AUTOURL-BEGIN-->\n<a href=\"https://github.com/${{ github.repository }}/blob/pdf/$filename.pdf\">\n<\!--AUTOURL-END-->" README.md
     - name: commit
       run: |
         git config user.name gucio321
