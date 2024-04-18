@@ -20,9 +20,37 @@ jobs:
     - name: install python3 dependencies
       run: |
         python3 -m pip install -r requirements.txt
-    - name: install latex dependencies
-      run: |
-        sudo apt install -y latexmk texlive texlive-fonts-extra texlive-full
+    #- name: install latex dependencies
+    #  run: |
+    #    sudo apt install -y latexmk texlive texlive-fonts-extra texlive-full
+    - name: setup texlive
+      uses: teatimeguest/setup-texlive-action@v3
+      with:
+        version: 2024
+        packages: |
+          # to list local packages use: tlmgr info --list --data name
+          scheme-basic
+          latexmk
+          cmap
+          cancel
+          tex-gyre
+          fncychap
+          float
+          wrapfig
+          capt-of
+          framed
+          babel-polish
+          fancyvrb
+          upquote
+          needspace
+          tabulary
+          varwidth
+          booktabs
+          parskip
+          titlesec
+          etoolbox
+          makecell
+          caption
     - name: build PDF
       run: make latexpdf
     - name: extract file name
