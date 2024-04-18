@@ -25,6 +25,7 @@ jobs:
     - name: install python3 dependencies
       run: |
         pip install -r requirements.txt
+        pip install setuptools
     - name: setup texlive
       uses: teatimeguest/setup-texlive-action@v3
       with:
