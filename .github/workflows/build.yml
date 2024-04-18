@@ -96,11 +96,13 @@ jobs:
         # replace content of README.md between <!--AUTOURL-BEGIN--> and <!--AUTOURL-END--> with the link to the PDF file
         sed -i -e "/\(<\!--AUTOURL-BEGIN-->\)/, /\(<\!--AUTOURL-END-->\)/c\<\!--AUTOURL-BEGIN-->\n<a href=\"https://github.com/${{ github.repository }}/blob/pdf/$filename.pdf\">\n<\!--AUTOURL-END-->" README.md
     - name: commit
-      run: |
-        git config user.name gucio321
-        git config user.email gucio321@protonmail.com
-        git add README.md
-        git commit -m "Update README.md with the link to the PDF file"
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Update README.md with the link to the PDF file
+        commit_options: '--no-verify'
+        file_pattern: README.md
+        commit_user_name: gucio321
+        commit_user_email: gucio321@protonmail.com
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
