@@ -1,3 +1,6 @@
+> **NOTE:** to use pdf build GitHub action, you might need to enable Write Access for our workflow.
+> Navigate **Settings -> Actions -> General** and change **Workflow Permissions** to **Read and Write permissions**
+
 # Description
 
 Template for Physics Labs reports on AGH. -- Szablon sprawozdań z Laboratorium Fizycznego AGH.
