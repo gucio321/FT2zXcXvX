@@ -2,9 +2,9 @@
 > Navigate **Settings -> Actions -> General** and change **Workflow Permissions** to **Read and Write permissions**
 
 <p align="center">
-<a
-href="https://github.com/gucio321/matematyka/blob/pdf/matematyka.pdf"
-><img src="./resources/button.png"></a>
+<!--AUTOURL-BEGIN-->
+<!--AUTOURL-END-->
+<img src="./resources/button.png"></a>
 </p>
 
 # Description

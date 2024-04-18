@@ -74,7 +74,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: pdf
         force: true
-  update:url:
+  update-url:
     needs: [build-pdf]
     runs-on: ubuntu-latest
     steps:
