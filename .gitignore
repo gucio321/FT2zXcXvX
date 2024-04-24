@@ -4,3 +4,4 @@ _build
 __pycache__
 __init__
 priv.py # this file will not be added to git
+fit.log # gnuplot fit logs
