@@ -132,7 +132,7 @@ def defineLatexVar(varName : str, var : str) -> str:
 
 latex_additional_files = ['resources/titlepage.cls', 'resources/logo_AGH.jpg']
 latex_elements = {
-        'papersize': 'letterpaper',
+        'papersize': 'a4paper',
         'pointsize': '10pt',
         'preamble': r'''
         \newcolumntype{L}{>{\raggedright\arraybackslash}X}
