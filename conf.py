@@ -35,27 +35,17 @@ titlepage = {
 
 if titlepage["taskDate"] == "auto":
     t = time.localtime()
-    titlepage["taskDate"] = (
-        str(t.tm_year)
-        + "-"
-        + "{:02d}".format(t.tm_mon)
-        + "-"
-        + "{:02d}".format(t.tm_mday)
-    )
+    titlepage["taskDate"] = (str(t.tm_year) + "-" + "{:02d}".format(t.tm_mon) +
+                             "-" + "{:02d}".format(t.tm_mday))
 
 if titlepage["creationDate"] == "auto":
     t = time.localtime()
-    titlepage["creationDate"] = (
-        str(t.tm_year)
-        + "-"
-        + "{:02d}".format(t.tm_mon)
-        + "-"
-        + "{:02d}".format(t.tm_mday)
-    )
+    titlepage["creationDate"] = (str(t.tm_year) + "-" +
+                                 "{:02d}".format(t.tm_mon) + "-" +
+                                 "{:02d}".format(t.tm_mday))
 
 if titlepage["year"] == "auto":
     titlepage["year"] = str(time.localtime().tm_year)
-
 
 # for cloud_sptheme.ext.issue_tracker
 issue_tracker_url = "gh:gucio321/fizyka"
@@ -157,9 +147,12 @@ def defineLatexVar(varName: str, var: str) -> str:
 
 latex_additional_files = ["resources/titlepage.cls", "resources/logo_AGH.jpg"]
 latex_elements = {
-    "papersize": "a4paper",
-    "pointsize": "10pt",
-    "preamble": r"""
+    "papersize":
+    "a4paper",
+    "pointsize":
+    "10pt",
+    "preamble":
+    r"""
         \newcolumntype{L}{>{\raggedright\arraybackslash}X}
         \ChRuleWidth{0pt}
         \ChNumVar{}
@@ -181,42 +174,27 @@ latex_elements = {
         \let\oldsphinxattableend\sphinxattableend
         \renewcommand{\sphinxattableend}{\oldsphinxattableend\end{minipage}}
 
-        \newcommand{\sphinxDocumentTitle}{"""
-    + titlepage["title"]
-    + r"""}
-        \newcommand{\sphinxDocumentAuthor}{"""
-    + titlepage["author"]
-    + r"""}
-        \newcommand{\sphinxDocumentGroupID}{"""
-    + titlepage["groupID"]
-    + r"""}
-        \newcommand{\sphinxDocumentFaculty}{"""
-    + titlepage["faculty"]
-    + r"""}
-        \newcommand{\sphinxDocumentTaskDate}{"""
-    + titlepage["taskDate"]
-    + r"""}
-        \newcommand{\sphinxDocumentCreationDate}{"""
-    + titlepage["creationDate"]
-    + r"""}
-        \newcommand{\sphinxDocumentCorrectionDate}{"""
-    + titlepage["correctionDate"]
-    + r"""}
-        """
-    + defineLatexVar("\sphinxDocumentTeam", titlepage["team"])
-    + r"""
-        """
-    + defineLatexVar("\sphinxDocumentNumber", titlepage["number"])
-    + r"""
-        """
-    + defineLatexVar("\sphinxDocumentYear", titlepage["year"])
-    + r"""
+        \newcommand{\sphinxDocumentTitle}{""" + titlepage["title"] + r"""}
+        \newcommand{\sphinxDocumentAuthor}{""" + titlepage["author"] + r"""}
+        \newcommand{\sphinxDocumentGroupID}{""" + titlepage["groupID"] + r"""}
+        \newcommand{\sphinxDocumentFaculty}{""" + titlepage["faculty"] + r"""}
+        \newcommand{\sphinxDocumentTaskDate}{""" + titlepage["taskDate"] +
+    r"""}
+        \newcommand{\sphinxDocumentCreationDate}{""" +
+    titlepage["creationDate"] + r"""}
+        \newcommand{\sphinxDocumentCorrectionDate}{""" +
+    titlepage["correctionDate"] + r"""}
+        """ + defineLatexVar("\sphinxDocumentTeam", titlepage["team"]) + r"""
+        """ + defineLatexVar("\sphinxDocumentNumber", titlepage["number"]) +
+    r"""
+        """ + defineLatexVar("\sphinxDocumentYear", titlepage["year"]) + r"""
 
 
 \titlespacing*{\chapter}{-10pt}{10pt}{0pt} % Adjust the values as needed
 \titlespacing*{\section}{0pt}{5pt}{0pt} % Adjust the values as needed
         """,
-    "maketitle": r"""\input{titlepage.cls}
+    "maketitle":
+    r"""\input{titlepage.cls}
 
 \titleformat{\chapter}[hang]
   {\normalfont\large\bfseries}{\llap{\thechapter\hskip 8pt}}{0pt}{\large}
@@ -227,6 +205,8 @@ latex_elements = {
 \makeatother
 
         """,
-    "tableofcontents": "",
-    "extraclassoptions": "openany,oneside",
+    "tableofcontents":
+    "",
+    "extraclassoptions":
+    "openany,oneside",
 }
