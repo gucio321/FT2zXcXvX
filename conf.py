@@ -10,45 +10,48 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+import time
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
-import time
 
 project = 'FT2zXcXvX'
 author = '[AUTORZY]'
 titlepage = {
-        "faculty": "Fizyki i Informatyki Stosowanej",
-        "year": "auto",
-        "groupID": "[NR GRUPY]",
-        "team": "[NR DRUŻYNY]",
-        "title": "[TEMAT ĆWICZENIA]",
-        "number": "[NUMER ĆWICZENIA]",
+    "faculty": "Fizyki i Informatyki Stosowanej",
+    "year": "auto",
+    "groupID": "[NR GRUPY]",
+    "team": "[NR DRUŻYNY]",
+    "title": "[TEMAT ĆWICZENIA]",
+    "number": "[NUMER ĆWICZENIA]",
 
-        "taskDate": "auto", # [DATA LABORATORIUM]
-        "creationDate": "auto", # [DATA POWSTANIA SPRAWOZDANIA]
-        "correctionDate": "", # [DATA POPRAWKI] - I hope You'll not need that :-)
+    "taskDate": "auto",  # [DATA LABORATORIUM]
+    "creationDate": "auto",  # [DATA POWSTANIA SPRAWOZDANIA]
+    # [DATA POPRAWKI] - I hope You'll not need that :-)
+    "correctionDate": "",
 
-        # nothing to change here
-        "author": author,
+    # nothing to change here
+    "author": author,
 }
 
 if titlepage["taskDate"] == "auto":
     t = time.localtime()
-    titlepage["taskDate"] = str(t.tm_year)+"-"+"{:02d}".format(t.tm_mon)+"-"+"{:02d}".format(t.tm_mday)
+    titlepage["taskDate"] = str(
+        t.tm_year)+"-"+"{:02d}".format(t.tm_mon)+"-"+"{:02d}".format(t.tm_mday)
 
 if titlepage["creationDate"] == "auto":
     t = time.localtime()
-    titlepage["creationDate"] = str(t.tm_year)+"-"+"{:02d}".format(t.tm_mon)+"-"+"{:02d}".format(t.tm_mday)
+    titlepage["creationDate"] = str(
+        t.tm_year)+"-"+"{:02d}".format(t.tm_mon)+"-"+"{:02d}".format(t.tm_mday)
 
 if titlepage["year"] == "auto":
     titlepage["year"] = str(time.localtime().tm_year)
 
 
 # for cloud_sptheme.ext.issue_tracker
-issue_tracker_url="gh:gucio321/fizyka"
+issue_tracker_url = "gh:gucio321/fizyka"
 
 # -- General configuration ---------------------------------------------------
 
@@ -56,12 +59,12 @@ issue_tracker_url="gh:gucio321/fizyka"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-        "sphinx.ext.githubpages",
-        "sphinxcontrib.images", # https://github.com/sphinx-contrib/images
-        "sphinxcontrib.plot",
-        #"cloud_sptheme.ext.issue_tracker",
-        "myst_parser" # ref: https://www.sphinx-doc.org/en/master/usage/markdown.html
-        ]
+    "sphinx.ext.githubpages",
+    "sphinxcontrib.images",  # https://github.com/sphinx-contrib/images
+    "sphinxcontrib.plot",
+    # "cloud_sptheme.ext.issue_tracker",
+    "myst_parser"  # ref: https://www.sphinx-doc.org/en/master/usage/markdown.html
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -76,7 +79,8 @@ language = 'pl'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['docs', 'Thumbs.db', '.DS_Store', '_build', 'venv', "README.md", "assets/README.md"]
+exclude_patterns = ['docs', 'Thumbs.db', '.DS_Store',
+                    '_build', 'venv', "README.md", "assets/README.md"]
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -86,13 +90,13 @@ exclude_patterns = ['docs', 'Thumbs.db', '.DS_Store', '_build', 'venv', "README.
 # more themes: https://sphinx-themes.org/#theme-groundwork-sphinx-theme
 html_theme = 'cloud'
 html_theme_options = {
-        "sidebar_localtoc_title": "Spis treści:",
-        "sidebar_prev_title": "Poprzednia strona",
-        "sidebar_next_title": "Następna strona",
-        }
-html_css_files= [
-        'css/custom.css'
-        ]
+    "sidebar_localtoc_title": "Spis treści:",
+    "sidebar_prev_title": "Poprzednia strona",
+    "sidebar_next_title": "Następna strona",
+}
+html_css_files = [
+    'css/custom.css'
+]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -101,40 +105,43 @@ html_static_path = ['_static']
 
 html_logo = "./assets/logo.png"
 html_favicon = "./assets/icon.ico"
-#TODO: add something better
-#html_permalinks_icon=
-html_copy_source=False
+# TODO: add something better
+# html_permalinks_icon=
+html_copy_source = False
 
 # for myst_parser (markdown)
 myst_enable_extensions = [
-        "amsmath",
-        "attrs_inline",
-        "colon_fence",
-        "deflist",
-        "dollarmath",
-        "fieldlist",
-        "html_admonition",
-        "html_image",
-        #"linkify",
-        "replacements",
-        "smartquotes",
-        "strikethrough",
-        "substitution",
-        "tasklist",
-        ]
+    "amsmath",
+    "attrs_inline",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    # "linkify",
+    "replacements",
+    "smartquotes",
+    "strikethrough",
+    "substitution",
+    "tasklist",
+]
 
 # just helper :-P
-def defineLatexVar(varName : str, var : str) -> str:
+
+
+def defineLatexVar(varName: str, var: str) -> str:
     if var == None or var == "":
         return ""
 
     return r'\newcommand{' + varName + r'}{' + var + "}"
 
+
 latex_additional_files = ['resources/titlepage.cls', 'resources/logo_AGH.jpg']
 latex_elements = {
-        'papersize': 'a4paper',
-        'pointsize': '10pt',
-        'preamble': r'''
+    'papersize': 'a4paper',
+    'pointsize': '10pt',
+    'preamble': r'''
         \newcolumntype{L}{>{\raggedright\arraybackslash}X}
         \ChRuleWidth{0pt}
         \ChNumVar{}
@@ -171,7 +178,7 @@ latex_elements = {
 \titlespacing*{\chapter}{-10pt}{10pt}{0pt} % Adjust the values as needed
 \titlespacing*{\section}{0pt}{5pt}{0pt} % Adjust the values as needed
         ''',
-        'maketitle': r'''\input{titlepage.cls}
+    'maketitle': r'''\input{titlepage.cls}
 
 \titleformat{\chapter}[hang]
   {\normalfont\large\bfseries}{\llap{\thechapter\hskip 8pt}}{0pt}{\large}
@@ -182,6 +189,6 @@ latex_elements = {
 \makeatother
 
         ''',
-        'tableofcontents':'',
-        'extraclassoptions': 'openany,oneside'
-        }
+    'tableofcontents': '',
+    'extraclassoptions': 'openany,oneside'
+}
