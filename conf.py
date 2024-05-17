@@ -151,6 +151,11 @@ latex_elements = {
         \DeclareCaptionLabelFormat{custom}{#1~\thechapter.#2}
         \captionsetup{labelformat=custom}
 
+        \let\oldsphinxattablestart\sphinxattablestart
+        \renewcommand{\sphinxattablestart}{\begin{minipage}{\textwidth}\oldsphinxattablestart}
+        \let\oldsphinxattableend\sphinxattableend
+        \renewcommand{\sphinxattableend}{\oldsphinxattableend\end{minipage}}
+
         \newcommand{\sphinxDocumentTitle}{'''+titlepage['title']+r'''}
         \newcommand{\sphinxDocumentAuthor}{'''+titlepage['author']+r'''}
         \newcommand{\sphinxDocumentGroupID}{'''+titlepage['groupID']+r'''}
