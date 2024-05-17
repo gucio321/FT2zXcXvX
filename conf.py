@@ -145,8 +145,8 @@ myst_enable_extensions = [
 def defineLatexVar(varName: str, var: str) -> str:
     """
 
-    :param varName: str: 
-    :param var: str: 
+    :param varName: str:
+    :param var: str:
 
     """
     if var == None or var == "":
