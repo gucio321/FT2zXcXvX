@@ -22,8 +22,8 @@ author = '[AUTORZY]'
 titlepage = {
         "faculty": "Fizyki i Informatyki Stosowanej",
         "year": "auto",
-        "groupID": "[NR GRUPY]",
-        "team": "[NR DRUŻYNY]",
+        "groupID": "[NR GRUPY ĆWICZENIOWEJ]",
+        "team": "[NR ZESPOŁU]",
         "title": "[TEMAT ĆWICZENIA]",
         "number": "[NUMER ĆWICZENIA]",
 
