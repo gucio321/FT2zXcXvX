@@ -58,7 +58,7 @@ issue_tracker_url="gh:gucio321/fizyka"
 # ones.
 extensions = [
         "sphinx.ext.githubpages",
-        "sphinxcontrib.images", # https://github.com/sphinx-contrib/images
+        #"sphinxcontrib.images", # https://github.com/sphinx-contrib/images
         "sphinxcontrib.plot",
         #"cloud_sptheme.ext.issue_tracker",
         "myst_parser" # ref: https://www.sphinx-doc.org/en/master/usage/markdown.html
@@ -131,7 +131,7 @@ def defineLatexVar(varName : str, var : str) -> str:
 
     return r'\newcommand{' + varName + r'}{' + var + "}"
 
-latex_additional_files = ['resources/titlepage.cls', 'resources/logo_AGH.jpg']
+latex_additional_files = ['resources/titlepage.cls']
 latex_elements = {
         'papersize': 'a4paper',
         'pointsize': '12pt',

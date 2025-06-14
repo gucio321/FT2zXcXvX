@@ -54,6 +54,7 @@ jobs:
           etoolbox
           makecell
           caption
+          xcolor
     - name: build PDF
       run: make latexpdf
     - name: extract file name
