@@ -33,6 +33,7 @@ titlepage = {
 
         # nothing to change here
         "author": author,
+        "subject": "PRACOWNIA FIZYCZNA WFiS AGH",
 }
 
 if titlepage["taskDate"] == "auto":
@@ -156,6 +157,7 @@ latex_elements = {
         \let\oldsphinxattableend\sphinxattableend
         \renewcommand{\sphinxattableend}{\oldsphinxattableend\end{minipage}}
 
+        \newcommand{\sphinxSubjectName}{'''+titlepage['subject']+r'''}
         \newcommand{\sphinxDocumentTitle}{'''+titlepage['title']+r'''}
         \newcommand{\sphinxDocumentAuthor}{'''+titlepage['author']+r'''}
         \newcommand{\sphinxDocumentGroupID}{'''+titlepage['groupID']+r'''}

@@ -12,7 +12,7 @@
     \bf{Zespół:} \sphinxDocumentTeam \\
     \hline
 
-    \multicolumn{2}{|p{2\dimexpr \textwidth/6 - 2\tabcolsep}|}{\bf{PRACOWNIA FIZYCZNA WFiS AGH}} &
+    \multicolumn{2}{|p{2\dimexpr \textwidth/6 - 2\tabcolsep}|}{\bf{\sphinxSubjectName}} &
     \multicolumn{2}{p{2\dimexpr \textwidth/6 - 2\tabcolsep}|}{\sphinxDocumentTitle} &
     \multicolumn{2}{p{2\dimexpr \textwidth/6 - 2\tabcolsep}|}{\bf{Ćwiczenie nr:} \sphinxDocumentNumber} \\
     \hline
