@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: check out code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: install  ubuntu dependencies
@@ -18,7 +18,7 @@ jobs:
         sudo apt -y update
         sudo apt -y install gnuplot
     - name: Set up python3
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: '3.12'
         cache: 'pip' # caching pip dependencies
@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: check out code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: extract file name
@@ -96,7 +96,7 @@ jobs:
         # replace content of README.md between <!--AUTOURL-BEGIN--> and <!--AUTOURL-END--> with the link to the PDF file
         sed -i -e "/\(<\!--AUTOURL-BEGIN-->\)/, /\(<\!--AUTOURL-END-->\)/c\<\!--AUTOURL-BEGIN-->\n<a href=\"https://github.com/${{ github.repository }}/blob/pdf/$filename.pdf\">\n<\!--AUTOURL-END-->" README.md
     - name: commit
-      uses: stefanzweifel/git-auto-commit-action@v5
+      uses: stefanzweifel/git-auto-commit-action@v7
       with:
         commit_message: Update README.md with the link to the PDF file
         commit_options: '--no-verify'
