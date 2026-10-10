@@ -61,6 +61,7 @@ extensions = [
         #"sphinxcontrib.images", # https://github.com/sphinx-contrib/images
         "sphinxcontrib.plot",
         #"cloud_sptheme.ext.issue_tracker",
+        "sphinxcontrib.inkscapeconverter",
         "myst_parser" # ref: https://www.sphinx-doc.org/en/master/usage/markdown.html
         ]
 
