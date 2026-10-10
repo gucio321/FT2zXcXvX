@@ -36,6 +36,15 @@ dnf install -y latexmk texlive-cmap texlive-collection-fontsrecommended texlive-
 sudo apt install -y latexmk texlive texlive-fonts-extra texlive-full texlive-lang-polish
 ```
 
+- on `pacman`-based linux:
+
+```sh
+sudo pacman -S texlive-basic texlive-bibtexextra texlive-bin texlive-binextra texlive-fontsextra texlive-fontsrecommended texlive-langpolish texlive-latex texlive-latexextra texlive-latexrecommended texlive-luatex texlive-pictures texlive-xetex
+```
+
+> [!note]
+> Turns out that when `texlive-fontsextra` is not installed, the fancy icons next to admonition blocks are not rendered.
+
 - on other distros: Generally you need to find the following:
     * `pdflatex` command
     * something like `texlive-full`
